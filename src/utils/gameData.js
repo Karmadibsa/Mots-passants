@@ -7,28 +7,32 @@ export const CATEGORIES = {
     geek: {
         id: 'geek',
         name: "Geek",
-        data: geek,
+        data: geek.words,
+        teamNames: geek.teamNames,
         color: "from-blue-600 to-blue-800",
         icon: "🎮"
     },
     friends: {
         id: 'friends',
         name: "Friends",
-        data: friends,
+        data: friends.words,
+        teamNames: friends.teamNames,
         color: "from-orange-500 to-orange-700",
         icon: "☕"
     },
     harryPotter: {
         id: 'harryPotter',
         name: "Harry Potter",
-        data: harryPotter,
+        data: harryPotter.words,
+        teamNames: harryPotter.teamNames,
         color: "from-red-700 to-red-900",
         icon: "⚡"
     },
     jeuxSociete: {
         id: 'jeuxSociete',
         name: "Jeux de Société",
-        data: jeuxSociete,
+        data: jeuxSociete.words,
+        teamNames: jeuxSociete.teamNames,
         color: "from-green-600 to-green-800",
         icon: "🎲"
     }

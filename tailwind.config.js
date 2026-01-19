@@ -7,17 +7,24 @@ export default {
     theme: {
         extend: {
             colors: {
-                'game-primary': '#0EA5E9', // Sky Blue
-                'game-secondary': '#6366F1', // Indigo
-                'game-accent': '#F43F5E', // Rose (for popping elements)
-                'game-dark': '#0F172A', // Slate 900
-                'game-surface': '#1E293B', // Slate 800
-                'safe-success': '#10B981', // Emerald
-                'safe-warning': '#F59E0B', // Amber
+                // Vibrant Blue/Teal Palette but with high punch
+                'game-primary': '#00C2FF', // Bright Cyan
+                'game-secondary': '#7C3AED', // Electric Violet (bringing back some punch but cool tone)
+                'game-accent': '#FF2E63', // Neon Red/Pink for hearts/errors
+
+                // Backgrounds
+                'game-dark': '#0B1120', // Very dark blue/slate
+                'game-surface': '#1F2937', // Lighter slate for cards/inputs
+                'game-highlight': '#334155', // Even lighter for hovers
+
+                // Functional
+                'safe-success': '#00E096', // Bright Green
+                'safe-warning': '#FFAA00', // Bright Orange
             },
             animation: {
-                'pop': 'pop 0.3s ease-out',
+                'pop': 'pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                 'slide-up': 'slideUp 0.5s ease-out',
+                'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             },
             keyframes: {
                 pop: {
