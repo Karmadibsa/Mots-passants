@@ -1,0 +1,43 @@
+{
+    "words": [
+        "Rouge",
+        "Bleu",
+        "Jaune",
+        "Vert",
+        "Orange",
+        "Violet",
+        "Rose",
+        "Noir",
+        "Blanc",
+        "Gris",
+        "Marron",
+        "Turquoise",
+        "Beige",
+        "Bordeaux",
+        "Kaki",
+        "Or",
+        "Argent",
+        "Indigo",
+        "Corail",
+        "Saumon",
+        "Moutarde",
+        "Fuchsia",
+        "Lavande",
+        "Menthe",
+        "Crème",
+        "Ocre",
+        "Prune",
+        "Saphir",
+        "Émeraude",
+        "Rubis"
+    ],
+    "teamNames": [
+        "Arc-en-ciel",
+        "Les Pigments",
+        "Nuances de Gris",
+        "Full Color",
+        "Monochromes",
+        "Les Pastels",
+        "Zèbres"
+    ]
+}

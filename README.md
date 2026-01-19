@@ -1,73 +1,80 @@
-# React + TypeScript + Vite
+# MOTS PASSANTS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue sur le jeu **Mots Passants** ! Ce projet est une version web moderne et stylée du célèbre jeu "Time's Up".
 
-Currently, two official plugins are available:
+## 🎮 Comment Jouer ?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1.  **Configuration** :
+    *   Choisissez vos équipes (ou utilisez le générateur aléatoire).
+    *   Sélectionnez un ou plusieurs thèmes (Geek, Friends, Harry Potter, etc.).
+    *   Choisissez la durée de la partie (Nombre de cartes).
+2.  **Jeu** :
+    *   **Tour 1** : Décrivez le mot sans le prononcer.
+    *   **Tour 2** : Un seul mot pour faire deviner.
+    *   **Tour 3** : Mimez le mot sans parler.
+3.  **But** : Faire deviner le maximum de mots en 30 secondes !
 
-## React Compiler
+## 🛠️ Ajouter une nouvelle liste de mots
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Vous pouvez facilement ajouter vos propres thèmes au jeu. Suivez ces étapes :
 
-## Expanding the ESLint configuration
+### 1. Créer le fichier JSON
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Créez un nouveau fichier dans le dossier `src/data/`. Par exemple : `src/data/MaSuperListe.json`.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Le fichier doit respecter ce format exact :
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```json
+{
+  "words": [
+    "Mot 1",
+    "Mot 2",
+    "Mot 3"
+  ],
+  "teamNames": [
+    "Nom d'équipe cool 1",
+    "Nom d'équipe cool 2"
+  ]
+}
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Enregistrer la liste dans le jeu
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Ouvrez le fichier `src/utils/gameData.js` et suivez ces 3 étapes :
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1.  **Importez votre fichier** en haut du fichier :
+    ```javascript
+    import maSuperListe from '../data/MaSuperListe.json';
+    ```
+
+2.  **Ajoutez la configuration** dans l'objet `CATEGORIES` :
+    ```javascript
+    export const CATEGORIES = {
+      // ... autres catégories ...
+      maSuperListe: {
+        id: 'maSuperListe',       // Identifiant unique
+        name: "Ma Super Liste",   // Nom affiché à l'écran
+        data: maSuperListe.words, // Lien vers les mots
+        teamNames: maSuperListe.teamNames, // Lien vers les noms d'équipes
+        color: "from-pink-500 to-rose-500", // Couleurs du dégradé (voir documentation Tailwind CSS)
+        icon: "🚀"                // Emoji affiché
+      }
+    };
+    ```
+
+3.  **Sauvegardez !** Le jeu se mettra à jour automatiquement.
+
+## 🚀 Installation & Développement
+
+```bash
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
+npm run dev
+
+# Construire pour la production
+npm run build
 ```
+
+Amusez-vous bien ! 🎉

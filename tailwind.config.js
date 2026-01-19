@@ -7,19 +7,16 @@ export default {
     theme: {
         extend: {
             colors: {
-                // Vibrant Blue/Teal Palette but with high punch
-                'game-primary': '#00C2FF', // Bright Cyan
-                'game-secondary': '#7C3AED', // Electric Violet (bringing back some punch but cool tone)
-                'game-accent': '#FF2E63', // Neon Red/Pink for hearts/errors
-
-                // Backgrounds
-                'game-dark': '#0B1120', // Very dark blue/slate
-                'game-surface': '#1F2937', // Lighter slate for cards/inputs
-                'game-highlight': '#334155', // Even lighter for hovers
-
-                // Functional
-                'safe-success': '#00E096', // Bright Green
-                'safe-warning': '#FFAA00', // Bright Orange
+                // Warm Family Palette
+                'game-bg': '#FFFBF5', // Cream / Off-white (Background)
+                'game-text': '#422006', // Dark Brown (Main Text)
+                'game-primary': '#FF8E3C', // Warm Orange (Primary Buttons/Highlights)
+                'game-secondary': '#8B5CF6', // Violet/Purple (Team 2 / Accents)
+                'game-accent': '#FF6B6B', // Soft Red (Action/Hearts)
+                'game-safe': '#6BCB77', // Soft Green (Success)
+                'game-card': '#FFFFFF', // Pure White (Cards)
+                'game-subtle': '#F2E8DC', // Beige/Sand (Subtle backgrounds)
+                'game-dark': '#2D2D2D', // Keep for compatibility if needed, or specific dark elements
             },
             animation: {
                 'pop': 'pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',

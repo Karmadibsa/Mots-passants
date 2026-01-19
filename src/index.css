@@ -4,8 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-game-dark text-white overflow-hidden touch-none; 
-    /* touch-none prevents some mobile scrolling issues */
+    @apply bg-game-bg text-game-text touch-manipulation;
   }
 }
 
